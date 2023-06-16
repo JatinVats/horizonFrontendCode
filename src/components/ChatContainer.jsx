@@ -108,12 +108,15 @@ export default function ChatContainer({ currentChat, socket }) {
 }
 
 const Container = styled.div`
+padding-top: 24px;
   display: grid;
   grid-template-rows: 10% 80% 10%;
   gap: 0.1rem;
   overflow: hidden;
-  @media screen and (min-width: 720px) and (max-width: 1080px) {
+  @media screen and (min-width: 600px) and (max-width: 1080px) {
     grid-template-rows: 15% 70% 15%;
+
+
   }
   .chat-header {
     display: flex;
@@ -160,7 +163,7 @@ const Container = styled.div`
         font-size: 1.1rem;
         border-radius: 1rem;
         color: #d1d1d1;
-        @media screen and (min-width: 720px) and (max-width: 1080px) {
+        @media screen and (min-width: 600px) and (max-width: 1080px) {
           max-width: 70%;
         }
       }
@@ -178,4 +181,9 @@ const Container = styled.div`
       }
     }
   }
+  @media screen and (min-width: 200px) and (max-width: 600px) {
+    grid-template-rows: 10% 70% 20%;
+    padding-top: 30px;
+      }
+
 `;

@@ -161,7 +161,7 @@ const FormContainer = styled.div`
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #4e0eff;
+    border: 0.1rem solid #F6BA6F;
     border-radius: 0.4rem;
     color: white;
     width: 100%;
@@ -172,7 +172,7 @@ const FormContainer = styled.div`
     }
   }
   button {
-    background-color: #4e0eff;
+    background-color: #F6BA6F;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -189,7 +189,7 @@ const FormContainer = styled.div`
     color: white;
     text-transform: uppercase;
     a {
-      color: #4e0eff;
+      color: #F6BA6F;
       text-decoration: none;
       font-weight: bold;
     }

@@ -54,7 +54,7 @@ const Container = styled.div`
   grid-template-columns: 5% 95%;
   background-color: #080420;
   padding: 0 2rem;
-  @media screen and (min-width: 720px) and (max-width: 1080px) {
+  @media screen and (min-width: 600px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
   }
@@ -97,6 +97,9 @@ const Container = styled.div`
         }
       }
     }
+
+  
+
   }
   .input-container {
     width: 100%;
@@ -120,6 +123,12 @@ const Container = styled.div`
       &:focus {
         outline: none;
       }
+
+
+     
+
+
+
     }
     button {
       padding: 0.3rem 2rem;
@@ -129,7 +138,7 @@ const Container = styled.div`
       align-items: center;
       background-color: #738FA7;
       border: none;
-      @media screen and (min-width: 720px) and (max-width: 1080px) {
+      @media screen and (min-width: 600px) and (max-width: 1080px) {
         padding: 0.3rem 1rem;
         svg {
           font-size: 1rem;
@@ -140,5 +149,16 @@ const Container = styled.div`
         color: white;
       }
     }
+   
+
+    @media screen and (min-width: 200px) and (max-width: 600px) {
+      margin-left: 20px;
+        }
+
   }
+
+
+  @media screen and (min-width: 200px) and (max-width: 600px) {
+      height: px;
+        }
 `;

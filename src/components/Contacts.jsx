@@ -81,7 +81,18 @@ const Container = styled.div`
       color: white;
       text-transform: uppercase;
     }
+
+    @media screen and (min-width: 200px) and (max-width: 600px){
+      img{
+        height: 1.2rem;
+      }
+
+      h3{
+        display:none;
+      }
+    }
   }
+
   .contacts {
     display: flex;
     flex-direction: column;
@@ -96,6 +107,10 @@ const Container = styled.div`
         border-radius: 1rem;
       }
     }
+
+
+
+
     .contact {
       background-color: #ffffff34;
       min-height: 5rem;
@@ -111,16 +126,67 @@ const Container = styled.div`
         img {
           height: 3rem;
         }
+
+      @media screen and (min-width: 200px) and (max-width: 600px) {
+        img {
+          height: 2rem;
+        }
+
+        h3{
+          display:none;
+        }
+
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        
       }
+
+    }
+
+
+
       .username {
         h3 {
           color: white;
         }
       }
+
+      @media screen and (min-width: 200px) and (max-width: 600px) {
+        
+        h3{
+          display:none;
+        }
+        
+        
+       
+        margin-left: 0.3rem;
+        
+        
+        
+      }
+
+
     }
+
+
+
+
     .selected {
       background-color: #738FA7;
     }
+
+    
+    @media screen and (min-width: 200px) and (max-width: 600px) {
+        
+       justify-content: flex-start ;
+       align-items: center;
+       max-inline-size: 100%;
+        
+        
+      }
+
   }
 
   .current-user {
@@ -140,13 +206,31 @@ const Container = styled.div`
         color: white;
       }
     }
-    @media screen and (min-width: 720px) and (max-width: 1080px) {
+    @media screen and (min-width: 600px) and (max-width: 1080px) {
       gap: 0.5rem;
       .username {
         h2 {
           font-size: 1rem;
         }
       }
+    }
+    
+    @media screen and (min-width: 200px) and (max-width: 600px) {
+      gap: 0.5rem;
+      .username {
+        h2 {
+          font-size: 1rem;
+          display: none;
+        }
+      }
+      .avatar{
+        margin-left:0.3rem;
+      }
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      
+
     }
   }
 `;
