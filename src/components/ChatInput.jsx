@@ -49,15 +49,13 @@ export default function ChatInput({ handleSendMsg }) {
 }
 
 const Container = styled.div`
+
   display: grid;
   align-items: center;
   grid-template-columns: 5% 95%;
   background-color: #080420;
   padding: 0 2rem;
-  @media screen and (min-width: 600px) and (max-width: 1080px) {
-    padding: 0 1rem;
-    gap: 1rem;
-  }
+ 
   .button-container {
     display: flex;
     align-items: center;
@@ -102,7 +100,7 @@ const Container = styled.div`
 
   }
   .input-container {
-    width: 100%;
+    width: 70%;
     border-radius: 2rem;
     display: flex;
     align-items: center;
@@ -118,7 +116,7 @@ const Container = styled.div`
       font-size: 1.2rem;
 
       &::selection {
-        background-color: #9a86f3;
+        background-color: #9685e3;
       }
       &:focus {
         outline: none;
@@ -138,12 +136,6 @@ const Container = styled.div`
       align-items: center;
       background-color: #738FA7;
       border: none;
-      @media screen and (min-width: 600px) and (max-width: 1080px) {
-        padding: 0.3rem 1rem;
-        svg {
-          font-size: 1rem;
-        }
-      }
       svg {
         font-size: 2rem;
         color: white;
@@ -151,14 +143,36 @@ const Container = styled.div`
     }
    
 
-    @media screen and (min-width: 200px) and (max-width: 600px) {
-      margin-left: 20px;
-        }
+    
 
   }
 
 
-  @media screen and (min-width: 200px) and (max-width: 600px) {
-      height: px;
-        }
+  @media (max-width: 450px){
+    padding-bottom: 0.4rem;
+    padding-top: 0.4rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    .input-container{
+      
+      gap: 1.2rem;
+      margin-left: 20px;
+      width: 90%;
+      font-size: 10px;
+      input{
+        width: 100%;
+      }
+
+      button{
+        margin-left: 0rem;
+      }
+    
+
+    }
+  }
+
+
+
 `;

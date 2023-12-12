@@ -119,6 +119,7 @@ export default function Register() {
           <button type="submit">Create User</button>
           <span>
             Already have an account ? <Link to="/login">Login.</Link>
+            
           </span>
         </form>
       </FormContainer>
@@ -194,4 +195,46 @@ const FormContainer = styled.div`
       font-weight: bold;
     }
   }
+
+
+  @media only screen and (max-width: 450px) {
+  .brand{
+    font-size: 0.5rem;
+    img{
+      height: 2rem;
+    }
+  }
+
+  form{
+    height: 80vh;
+    width: 90vw;
+    padding: 2rem;
+    justify-content: center;
+    padding-bottom: 3rem;
+    margin: 10rem ;
+  }
+
+  input{
+    height: 10%;
+    width: 100%;
+    align-self: center;
+  }
+  button{
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  span{
+    font-size: 0.9rem;
+    max-width: 15rem;
+    align-self: left;
+  }
+
+  
+}
+
+
+
 `;

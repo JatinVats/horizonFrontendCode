@@ -94,6 +94,7 @@ export default function Login() {
 }
 
 const FormContainer = styled.div`
+overflow: hidden;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -160,4 +161,44 @@ const FormContainer = styled.div`
       font-weight: bold;
     }
   }
+
+  @media only screen and (max-width: 450px) {
+  .brand{
+    font-size: 0.5rem;
+    img{
+      height: 2rem;
+    }
+  }
+
+  form{
+    height: 70vh;
+    width: 90vw;
+    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: auto;
+    margin: 10rem ;
+    justify-content: center;
+    
+  }
+
+  input{
+    height: 15%;
+    width: 100%;
+    align-self: center;
+  }
+  button{
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  span{
+    font-size: 0.9rem;
+    max-width: 13rem;
+    align-self: left;
+  }
+
+  
+}
 `;

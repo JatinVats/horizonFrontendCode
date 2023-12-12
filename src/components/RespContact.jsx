@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
+import Logout from "./Logout";
 
-export default function Contacts({ contacts, changeChat }) {
+export default function RespContact({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
@@ -19,12 +20,12 @@ export default function Contacts({ contacts, changeChat }) {
   };
   return (
     <>
+    <ResLogout className="resp-logout">
+    <Logout/>
+    </ResLogout>
       {currentUserImage && currentUserImage && (
         <Container>
-          <div className="brand">
-            <img src={Logo} alt="logo" />
-            <h3>horizon</h3>
-          </div>
+         
           <div className="contacts">
             {contacts.map((contact, index) => {
               return (
@@ -48,25 +49,28 @@ export default function Contacts({ contacts, changeChat }) {
               );
             })}
           </div>
-          <div className="current-user">
-            <div className="avatar">
-              <img
-                src={`data:image/svg+xml;base64,${currentUserImage}`}
-                alt="avatar"
-              />
-            </div>
-            <div className="username">
-              <h2>{currentUserName}</h2>
-            </div>
-          </div>
+          
         </Container>
       )}
     </>
   );
 }
+
+const ResLogout = styled.div`
+  position: fixed;
+  z-index: 999;
+  right: 1rem;
+  top: 8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+`
+
+
+
+
 const Container = styled.div`
-  display: grid;
-  grid-template-rows: 10% 75% 15%;
+
+  display: none;
+  
   overflow: hidden;
   background-color: #080420;
   .brand {
@@ -183,8 +187,48 @@ const Container = styled.div`
   } */
 
   @media (max-width: 450px){
-    display: none;
+    /* display: none; */
+    display: grid;
+    position: fixed;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    top: 0;
+    left: 0;
+    
+    .contacts{
+    flex-direction: row;
+    height: max-content;
+    padding: 0.5rem;
+    
+
+    &::-webkit-scrollbar {
+      
+      width: 0.1rem;
+      &-thumb {
+        background-color: #ffffff39;
+        width: 0.05rem;
+        border-radius: 1rem;
+      }
+    }
+
+
+
+    .contact{
+      padding: 0.5rem;
+    }
+
+
+    }
+
+    .brand{
+      display: none;
+    }
+
+    .current-user{
+      display: none;
+    }
+
 
   }
-
 `;

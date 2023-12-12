@@ -33,4 +33,16 @@ const Container = styled.div`
   span {
     color: #4e0eff;
   }
+
+
+  @media (max-width: 450px){
+    align-self: center;
+    height: 100%;
+    width: 100vw;
+
+    h3{
+      text-align:center;
+      padding-top: 10px;
+    }
+  }
 `;

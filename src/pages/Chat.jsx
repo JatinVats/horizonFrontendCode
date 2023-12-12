@@ -7,6 +7,7 @@ import { allUsersRoute, host } from "../utils/APIRoutes";
 import ChatContainer from "../components/ChatContainer";
 import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
+import RespContact from "../components/RespContact";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -47,19 +48,34 @@ export default function Chat() {
   };
   return (
     <>
-      <Container>
+
+
+
+
+ <Container>
+
+<div className="resp-contacts">
+
+<RespContact contacts={contacts} changeChat={handleChatChange} />
+
+
+</div>
+
+
         <div className="container">
-          <Contacts contacts={contacts} changeChat={handleChatChange} />
+          <Contacts className="nonresp-contacts" contacts={contacts} changeChat={handleChatChange} />
           {currentChat === undefined ? (
             <Welcome />
           ) : (
             <ChatContainer currentChat={currentChat} socket={socket} />
           )}
         </div>
-      </Container>
+      </Container>      
     </>
   );
 }
+
+
 
 const Container = styled.div`
   height: 100vh;
@@ -70,17 +86,42 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: #131324;
+
+
+.resp-contacts{
+  display: none;;
+}
+  
   .container {
-    height: 85vh;
-    width: 85vw;
+    height: 100vh;
+    width: 100vw;
     background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%;
-    @media screen and (min-width: 600px) and (max-width: 1080px) {
-      grid-template-columns: 35% 65%;
-    }
-    @media screen and (min-width: 200px) and (max-width: 600px) {
-      grid-template-columns: 10% 90%;
-      }
   }
-`;
+
+  
+  
+  @media (max-width: 450px){
+    .resp-contacts{
+      display: flex;
+      margin-bottom: 20px;
+    }
+    overflow: hidden;
+    .container{
+      display: flex;
+      width: 100%;
+      /* padding: 40px; */
+
+    }
+  }
+
+
+
+
+
+
+
+
+`;    
+

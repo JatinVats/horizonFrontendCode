@@ -73,7 +73,7 @@ export default function SetAvatar() {
       ) : (
         <Container>
           <div className="title-container">
-            <h1>Pick an Avatar as your profile picture</h1>
+            <h1>Select an Avatar</h1>
           </div>
           <div className="avatars">
             {avatars.map((avatar, index) => {
@@ -129,7 +129,7 @@ const Container = styled.div`
     .avatar {
       border: 0.4rem solid transparent;
       padding: 0.4rem;
-      border-radius: 5rem;
+      border-radius: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -157,4 +157,33 @@ const Container = styled.div`
       background-color: #4e0eff;
     }
   }
+
+
+  @media (max-width: 450px){
+    height: 100vh;
+    overflow: hidden;
+    img{
+      height: 5rem;
+      align-self:center;
+    }
+
+    text-align: center;
+
+    .avatars{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+      .avatar{
+        img{
+          height: 4rem;
+        }
+        .selected {
+        border: 4rem solid #e0e710;
+      }
+    }
+  }
+
+  }
+
+
 `;

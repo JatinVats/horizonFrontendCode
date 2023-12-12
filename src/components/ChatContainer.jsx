@@ -5,6 +5,8 @@ import Logout from "./Logout";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes";
+import { useMediaQuery } from 'react-responsive';
+import Contacts from "./Contacts";
 
 export default function ChatContainer({ currentChat, socket }) {
   const [messages, setMessages] = useState([]);
@@ -69,8 +71,19 @@ export default function ChatContainer({ currentChat, socket }) {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+
+  // const isMobile = useMediaQuery({ query: '(max-width: 450px)' })
+
+
+  // if(isMobile) {
+  //   return (<div>LMAO</div>)
+  // }
+
+
+
   return (
     <Container>
+
       <div className="chat-header">
         <div className="user-details">
           <div className="avatar">
@@ -102,22 +115,30 @@ export default function ChatContainer({ currentChat, socket }) {
           );
         })}
       </div>
+      <div className="inputC">
       <ChatInput handleSendMsg={handleSendMsg} />
+      </div>
+      
     </Container>
   );
 }
 
+
+
+
 const Container = styled.div`
-padding-top: 24px;
+padding-top: 4rem;
   display: grid;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 10% 80% 7%;
   gap: 0.1rem;
   overflow: hidden;
-  @media screen and (min-width: 600px) and (max-width: 1080px) {
-    grid-template-rows: 15% 70% 15%;
 
-
+  .inputC{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
+ 
   .chat-header {
     display: flex;
     justify-content: space-between;
@@ -163,9 +184,7 @@ padding-top: 24px;
         font-size: 1.1rem;
         border-radius: 1rem;
         color: #d1d1d1;
-        @media screen and (min-width: 600px) and (max-width: 1080px) {
-          max-width: 70%;
-        }
+        
       }
     }
     .sended {
@@ -181,9 +200,34 @@ padding-top: 24px;
       }
     }
   }
-  @media screen and (min-width: 200px) and (max-width: 600px) {
-    grid-template-rows: 10% 70% 20%;
-    padding-top: 30px;
-      }
+
+
+  @media (max-width: 450px){
+    grid-template-rows: 90% 11% ;
+    
+   .chat-header{
+    display: none;;
+   }
+    margin-top: 10px;
+    height: 93vh;
+  .inputC{
+    position:fixed;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  }
+
+  .chat-messages{
+   
+    width: 100vw;
+    margin-top: 20px;
+    
+  }
+  
+  }
+
+
 
 `;
